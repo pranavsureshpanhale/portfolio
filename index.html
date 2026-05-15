@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pranav Suresh Panhale | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@500;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg: #060816;
@@ -217,14 +220,14 @@
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 14px;
       justify-content: flex-end;
     }
 
     .nav-links a {
       position: relative;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .nav-links a::after {
@@ -300,7 +303,10 @@
       animation: pulse 1.8s infinite;
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       margin: 0;
       font-family: "Syne", sans-serif;
       line-height: 0.98;
@@ -308,7 +314,7 @@
 
     h1 {
       font-size: clamp(3.6rem, 9vw, 6.9rem);
-      letter-spacing: -0.05em;
+      letter-spacing: 0;
       margin-bottom: 18px;
     }
 
@@ -434,6 +440,19 @@
       box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.03), 0 20px 44px rgba(57, 231, 255, 0.2);
     }
 
+    .profile-photo {
+      position: relative;
+      width: 148px;
+      height: 148px;
+      display: block;
+      margin-bottom: 24px;
+      border-radius: 30px;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.03), 0 22px 46px rgba(57, 231, 255, 0.18);
+    }
+
     .mini-label {
       display: inline-block;
       margin-bottom: 10px;
@@ -502,7 +521,7 @@
 
     h2 {
       font-size: clamp(2rem, 5vw, 3.1rem);
-      letter-spacing: -0.04em;
+      letter-spacing: 0;
     }
 
     .glass-card,
@@ -519,17 +538,82 @@
       box-shadow: var(--shadow);
     }
 
+    .skill-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .skill-tab {
+      cursor: none;
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .skill-tab:hover,
+    .skill-tab:focus-visible,
+    .skill-tab.active {
+      color: var(--text);
+      background: linear-gradient(120deg, rgba(91, 92, 255, 0.22), rgba(255, 79, 184, 0.18), rgba(57, 231, 255, 0.16));
+      border-color: rgba(57, 231, 255, 0.28);
+      transform: translateY(-3px);
+    }
+
     .skills-layout {
       display: grid;
-      grid-template-columns: 1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 26px;
+      align-items: start;
     }
 
     .skills-panel {
+      display: none;
       padding: 28px;
     }
 
-    .skill-row + .skill-row {
+    .skills-panel.active {
+      display: block;
+      animation: fadeLift 0.45s ease;
+    }
+
+    .skill-category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .skill-category {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .skill-category h3 {
+      font-size: 1.05rem;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .role-note {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 24px;
+    }
+
+    .skill-row+.skill-row {
       margin-top: 22px;
     }
 
@@ -560,7 +644,7 @@
       height: 100%;
       border-radius: inherit;
       background: linear-gradient(90deg, var(--indigo), var(--pink), var(--cyan), var(--amber));
-      transition: width 1.2s cubic-bezier(.2,.8,.2,1);
+      transition: width 1.2s cubic-bezier(.2, .8, .2, 1);
     }
 
     .skill-fill::after {
@@ -570,7 +654,7 @@
       left: -30%;
       width: 30%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.65), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
       transform: skewX(-24deg);
       opacity: 0;
     }
@@ -686,8 +770,8 @@
       padding: 9px 14px;
       border-radius: 999px;
       font-size: 0.84rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       color: #dfe7ff;
     }
 
@@ -767,8 +851,46 @@
     .edu-item {
       padding: 22px;
       border-radius: 22px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .course-groups {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .course-group {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .course-group strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--cyan);
+      font-size: 0.9rem;
+    }
+
+    .course-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .course-chip {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: #dfe7ff;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      font-size: 0.82rem;
+      line-height: 1.2;
     }
 
     .edu-item p,
@@ -776,6 +898,59 @@
     .lang-card p {
       color: var(--muted);
       line-height: 1.7;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .cert-card {
+      position: relative;
+      min-height: 190px;
+      padding: 24px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(16, 21, 46, 0.78), rgba(10, 14, 32, 0.82));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cert-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--indigo), var(--pink), var(--cyan), var(--amber));
+    }
+
+    .cert-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 186, 66, 0.25);
+      box-shadow: 0 26px 54px rgba(255, 186, 66, 0.12);
+    }
+
+    .cert-issuer {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+    }
+
+    .cert-card h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .cert-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
     }
 
     .lang-badges {
@@ -791,8 +966,8 @@
       gap: 10px;
       padding: 14px 16px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       animation: floatSoft 4.5s ease-in-out infinite;
     }
 
@@ -859,6 +1034,18 @@
     .ripple-ring {
       border: 2px solid rgba(255, 255, 255, 0.16);
       animation: ripple 3s linear infinite;
+      z-index: 1;
+    }
+
+    .contact-portrait {
+      position: relative;
+      z-index: 2;
+      width: calc(100% - 14px);
+      height: calc(100% - 14px);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 28% center;
+      border: 3px solid rgba(255, 255, 255, 0.18);
     }
 
     .ripple-ring:nth-child(2) {
@@ -897,12 +1084,21 @@
     }
 
     @keyframes shimmer {
-      to { background-position: 200% center; }
+      to {
+        background-position: 200% center;
+      }
     }
 
     @keyframes loadBar {
-      from { transform: scaleX(0); background-position: 0 0; }
-      to { transform: scaleX(1); background-position: 200% 0; }
+      from {
+        transform: scaleX(0);
+        background-position: 0 0;
+      }
+
+      to {
+        transform: scaleX(1);
+        background-position: 200% 0;
+      }
     }
 
     @keyframes navEnter {
@@ -913,46 +1109,113 @@
     }
 
     @keyframes floatCard {
-      0%, 100% { transform: rotateX(7deg) rotateY(-8deg) translateY(0px); }
-      50% { transform: rotateX(-2deg) rotateY(7deg) translateY(-12px); }
+
+      0%,
+      100% {
+        transform: rotateX(7deg) rotateY(-8deg) translateY(0px);
+      }
+
+      50% {
+        transform: rotateX(-2deg) rotateY(7deg) translateY(-12px);
+      }
     }
 
     @keyframes orbDrift {
-      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(16px, -16px, 0) scale(1.08); }
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(16px, -16px, 0) scale(1.08);
+      }
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.15); opacity: 0.65; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: 0.65;
+      }
     }
 
     @keyframes skillShine {
-      0% { left: -30%; opacity: 0; }
-      20% { opacity: 1; }
-      100% { left: 120%; opacity: 0; }
+      0% {
+        left: -30%;
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
     }
 
     @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     @keyframes ripple {
-      0% { transform: scale(1); opacity: 0.55; }
-      100% { transform: scale(2.2); opacity: 0; }
+      0% {
+        transform: scale(1);
+        opacity: 0.55;
+      }
+
+      100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
     }
 
     @keyframes floatSoft {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes fadeLift {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 1080px) {
+
       .hero-grid,
       .skills-layout,
       .edu-lang-grid,
@@ -960,7 +1223,8 @@
         grid-template-columns: 1fr;
       }
 
-      .project-grid {
+      .project-grid,
+      .cert-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -1003,7 +1267,10 @@
       }
 
       .stat-grid,
-      .project-grid {
+      .project-grid,
+      .skill-category-grid,
+      .course-groups,
+      .cert-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1013,7 +1280,8 @@
       .project-card,
       .timeline-card,
       .edu-card,
-      .lang-card {
+      .lang-card,
+      .cert-card {
         padding: 22px;
       }
 
@@ -1028,6 +1296,7 @@
     }
   </style>
 </head>
+
 <body class="loading">
   <canvas id="particle-canvas"></canvas>
   <div class="noise-overlay" aria-hidden="true"></div>
@@ -1049,6 +1318,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -1058,13 +1328,15 @@
     <section class="hero" id="home">
       <div class="hero-grid">
         <div class="reveal reveal-left">
-          <div class="eyebrow">Available for Working Student and Internship Roles</div>
+          <div class="eyebrow">Available for Working Student, Internship and Full-time Roles</div>
           <h1 class="shimmer-text">Pranav Suresh Panhale</h1>
-          <p class="hero-subtitle">Working Student / Intern | Java Backend Developer</p>
+          <p class="hero-subtitle">Software Engineer | Full Stack Developer | Data & AI Systems Builder</p>
           <p class="hero-copy">
-            Software Engineer with 4 years of experience building scalable Java backend systems with Spring Boot, microservices,
-            REST APIs, SQL-driven applications, and modernization work across distributed platforms. Currently pursuing an
-            M.Sc. in Web and Data Science at Universitat Koblenz.
+            I create reliable software that turns complex business, data, and AI requirements into clear working
+            systems.
+            With 4 years of industry experience, I am passionate about building scalable products, modernizing legacy
+            platforms,
+            designing useful APIs, and connecting backend engineering with data, cloud, and intelligent automation.
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#contact">Let's Connect</a>
@@ -1076,14 +1348,15 @@
           <div class="hero-orb"></div>
           <article class="floating-card">
             <div class="ring" aria-hidden="true"></div>
-            <div class="avatar-core">PSP</div>
-            <span class="mini-label">Backend Builder</span>
-            <h2 style="font-size:2rem; margin-bottom:12px;">Java Backend Developer</h2>
-            <p class="role-line">Microservices, REST APIs, SQL optimization, legacy modernization, and reliable software delivery.</p>
+            <img class="profile-photo" src="portfolio1.jpeg" alt="Professional headshot of Pranav Suresh Panhale">
+            <span class="mini-label">Multi-role Portfolio</span>
+            <h2 style="font-size:2rem; margin-bottom:12px;">Full Stack + Data + AI</h2>
+            <p class="role-line">Java ecosystems, web platforms, data pipelines, ML workflows, cloud foundations, and
+              production-minded engineering.</p>
             <div class="stat-grid">
               <div class="stat">
                 <strong>4+</strong>
-                <span>Years in backend engineering</span>
+                <span>Years of software engineering</span>
               </div>
               <div class="stat">
                 <strong>200+</strong>
@@ -1102,66 +1375,398 @@
     <section id="skills">
       <div class="section-head reveal">
         <div>
-          <span class="section-kicker">Capabilities</span>
+          <span class="section-kicker">Recruiter Shortcuts</span>
           <h2>Skills & Tech Stack</h2>
         </div>
         <p>
-          The resume lists a broad backend-focused stack across Java, Spring, SQL, distributed systems, DevOps tooling, and AI-assisted workflows.
-          Proficiency levels below are inferred from the depth and recency of experience described in the resume.
+          Select a role track to scan the most relevant skills quickly. The portfolio now groups backend, full stack,
+          data engineering,
+          AI engineering, MLOps, cloud, and system design capabilities without forcing recruiters through one long list.
         </p>
       </div>
 
+      <div class="skill-tabs reveal" role="tablist" aria-label="Role based skill tracks">
+        <button class="skill-tab active" type="button" role="tab" aria-selected="true" data-skill-tab="java">Java / Full
+          Stack</button>
+        <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="data">Data
+          Engineering</button>
+        <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="mlops">AI / ML /
+          MLOps</button>
+        <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="design">System
+          Design</button>
+      </div>
+
       <div class="skills-layout">
-        <div class="glass-card skills-panel reveal reveal-left">
+        <div class="glass-card skills-panel active reveal reveal-left" data-skill-panel="java">
+          <p class="role-note">Best fit for Java developer, backend engineer, full stack developer, Spring Boot
+            developer, and cloud-integrated application roles.</p>
+          <div class="skill-category-grid">
+            <div class="skill-category">
+              <h3>Java Ecosystem</h3>
+              <div class="skill-list">
+                <span class="badge">Java</span>
+                <span class="badge">J2EE</span>
+                <span class="badge">Jakarta EE</span>
+                <span class="badge">Spring Boot</span>
+                <span class="badge">Microservices</span>
+                <span class="badge">Kafka</span>
+                <span class="badge">Docker</span>
+                <span class="badge">Kubernetes</span>
+                <span class="badge">Cloud Integrations</span>
+                <span class="badge">AI Integrations</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Spring & API Development</h3>
+              <div class="skill-list">
+                <span class="badge">Spring MVC</span>
+                <span class="badge">Spring Framework</span>
+                <span class="badge">Hibernate</span>
+                <span class="badge">REST APIs</span>
+                <span class="badge">Postman</span>
+                <span class="badge">Jenkins</span>
+                <span class="badge">Git</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Frontend & Product Work</h3>
+              <div class="skill-list">
+                <span class="badge">React</span>
+                <span class="badge">Angular</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">Responsive UI</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Related Certifications</h3>
+              <div class="skill-list">
+                <span class="badge">Microsoft Java MTA 98-388</span>
+                <span class="badge">Oracle OCP</span>
+                <span class="badge">Azure Fundamentals</span>
+              </div>
+            </div>
+          </div>
           <div class="skill-row">
             <div class="skill-meta"><span>Java / J2EE</span><span>Advanced</span></div>
-            <div class="skill-track"><div class="skill-fill" data-width="94%"></div></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="94%"></div>
+            </div>
           </div>
           <div class="skill-row">
             <div class="skill-meta"><span>Spring Boot & Spring Framework</span><span>Advanced</span></div>
-            <div class="skill-track"><div class="skill-fill" data-width="92%"></div></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="92%"></div>
+            </div>
           </div>
           <div class="skill-row">
             <div class="skill-meta"><span>REST APIs & Microservices</span><span>Advanced</span></div>
-            <div class="skill-track"><div class="skill-fill" data-width="93%"></div></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="93%"></div>
+            </div>
           </div>
           <div class="skill-row">
             <div class="skill-meta"><span>SQL / PostgreSQL / MySQL</span><span>Strong</span></div>
-            <div class="skill-track"><div class="skill-fill" data-width="88%"></div></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="88%"></div>
+            </div>
           </div>
           <div class="skill-row">
             <div class="skill-meta"><span>Distributed & Event-Driven Systems</span><span>Strong</span></div>
-            <div class="skill-track"><div class="skill-fill" data-width="82%"></div></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="82%"></div>
+            </div>
           </div>
           <div class="skill-row">
             <div class="skill-meta"><span>Docker & Kubernetes</span><span>Intermediate</span></div>
-            <div class="skill-track"><div class="skill-fill" data-width="74%"></div></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="74%"></div>
+            </div>
           </div>
           <div class="skill-row">
             <div class="skill-meta"><span>Git / Jenkins / Postman / Jira</span><span>Strong</span></div>
-            <div class="skill-track"><div class="skill-fill" data-width="80%"></div></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="80%"></div>
+            </div>
           </div>
           <div class="skill-row">
             <div class="skill-meta"><span>AI Tools & Prompting Workflows</span><span>Intermediate</span></div>
-            <div class="skill-track"><div class="skill-fill" data-width="72%"></div></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="72%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card skills-panel reveal reveal-left" data-skill-panel="data">
+          <p class="role-note">Best fit for data engineer, analytics engineer, ETL developer, big data developer, and
+            data platform roles.</p>
+          <div class="skill-category-grid">
+            <div class="skill-category">
+              <h3>Core Data Engineering</h3>
+              <div class="skill-list">
+                <span class="badge">Python</span>
+                <span class="badge">SQL</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">ETL / ELT</span>
+                <span class="badge">Data Modeling</span>
+                <span class="badge">Data Warehousing</span>
+                <span class="badge">Batch Processing</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Big Data & Streaming</h3>
+              <div class="skill-list">
+                <span class="badge">Apache Spark</span>
+                <span class="badge">Apache Kafka</span>
+                <span class="badge">Airflow</span>
+                <span class="badge">dbt</span>
+                <span class="badge">Databricks</span>
+                <span class="badge">Snowflake</span>
+                <span class="badge">BigQuery</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Cloud Data Platforms</h3>
+              <div class="skill-list">
+                <span class="badge">AWS</span>
+                <span class="badge">Azure</span>
+                <span class="badge">Google Cloud</span>
+                <span class="badge">S3 / Blob Storage</span>
+                <span class="badge">Data Lakes</span>
+                <span class="badge">CI/CD</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Quality & Operations</h3>
+              <div class="skill-list">
+                <span class="badge">Data Quality</span>
+                <span class="badge">Schema Evolution</span>
+                <span class="badge">Monitoring</span>
+                <span class="badge">Testing</span>
+                <span class="badge">Governance</span>
+                <span class="badge">Agile Delivery</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>SQL & Data Modeling</span><span>Strong</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="88%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>Streaming & Event Pipelines</span><span>Growing Strong</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="78%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>Cloud Data Architecture</span><span>Intermediate</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="74%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>Data Quality & Reliability</span><span>Strong</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="82%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card skills-panel reveal reveal-left" data-skill-panel="mlops">
+          <p class="role-note">Best fit for ML engineer, AI engineer, MLOps engineer, LLM application developer, and
+            applied machine learning roles.</p>
+          <div class="skill-category-grid">
+            <div class="skill-category">
+              <h3>Machine Learning</h3>
+              <div class="skill-list">
+                <span class="badge">Python</span>
+                <span class="badge">Pandas</span>
+                <span class="badge">NumPy</span>
+                <span class="badge">scikit-learn</span>
+                <span class="badge">Feature Engineering</span>
+                <span class="badge">Model Evaluation</span>
+                <span class="badge">Anomaly Detection</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Deep Learning & AI</h3>
+              <div class="skill-list">
+                <span class="badge">RNNs</span>
+                <span class="badge">TensorFlow</span>
+                <span class="badge">PyTorch</span>
+                <span class="badge">Computer Vision</span>
+                <span class="badge">LLMs</span>
+                <span class="badge">Prompt Engineering</span>
+                <span class="badge">RAG</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>MLOps & Deployment</h3>
+              <div class="skill-list">
+                <span class="badge">MLflow</span>
+                <span class="badge">DVC</span>
+                <span class="badge">Model Registry</span>
+                <span class="badge">FastAPI</span>
+                <span class="badge">Docker</span>
+                <span class="badge">Kubernetes</span>
+                <span class="badge">CI/CD</span>
+                <span class="badge">Model Monitoring</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>AI Application Stack</h3>
+              <div class="skill-list">
+                <span class="badge">LangChain</span>
+                <span class="badge">OpenAI APIs</span>
+                <span class="badge">Hugging Face</span>
+                <span class="badge">Vector Databases</span>
+                <span class="badge">Embeddings</span>
+                <span class="badge">AI Agents</span>
+                <span class="badge">LLMOps</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>ML Pipelines & Feature Engineering</span><span>Strong Foundation</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="80%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>AI Agent & LLM Workflows</span><span>Growing Strong</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="76%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>MLOps Deployment Stack</span><span>Intermediate</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="72%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>Responsible AI & Monitoring</span><span>Intermediate</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="70%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card skills-panel reveal reveal-left" data-skill-panel="design">
+          <p class="role-note">Best fit for software engineer, solution engineer, platform engineer, and
+            architecture-focused roles.</p>
+          <div class="skill-category-grid">
+            <div class="skill-category">
+              <h3>Architecture Patterns</h3>
+              <div class="skill-list">
+                <span class="badge">Domain Driven Design</span>
+                <span class="badge">Event-Driven Design</span>
+                <span class="badge">Design Patterns</span>
+                <span class="badge">Layered Architecture</span>
+                <span class="badge">Hexagonal Architecture</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>System Evolution</h3>
+              <div class="skill-list">
+                <span class="badge">Monolithic Systems</span>
+                <span class="badge">Microservices</span>
+                <span class="badge">Modularization</span>
+                <span class="badge">Legacy Modernization</span>
+                <span class="badge">API Gateway Concepts</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Production Quality</h3>
+              <div class="skill-list">
+                <span class="badge">Security Fixes</span>
+                <span class="badge">Performance Tuning</span>
+                <span class="badge">Reliability</span>
+                <span class="badge">Testing</span>
+                <span class="badge">Observability</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>Delivery</h3>
+              <div class="skill-list">
+                <span class="badge">Agile</span>
+                <span class="badge">Scrum</span>
+                <span class="badge">User Story Ownership</span>
+                <span class="badge">Stakeholder Collaboration</span>
+                <span class="badge">Leadership</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>Microservice Decomposition</span><span>Advanced</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="90%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>API Design & Integration</span><span>Advanced</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="92%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>Performance & Reliability</span><span>Strong</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="86%"></div>
+            </div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-meta"><span>Security Remediation</span><span>Strong</span></div>
+            <div class="skill-track">
+              <div class="skill-fill" data-width="84%"></div>
+            </div>
           </div>
         </div>
 
         <div class="glass-card tech-cloud reveal reveal-right">
           <span class="chip">Java</span>
           <span class="chip">J2EE</span>
+          <span class="chip">Jakarta EE</span>
           <span class="chip">Spring Boot</span>
           <span class="chip">Spring Framework</span>
+          <span class="chip">Spring MVC</span>
+          <span class="chip">Hibernate</span>
           <span class="chip">REST APIs</span>
           <span class="chip">Microservices</span>
+          <span class="chip">Domain Driven Design</span>
+          <span class="chip">Design Patterns</span>
           <span class="chip">SQL</span>
           <span class="chip">PostgreSQL</span>
           <span class="chip">MySQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">NumPy</span>
+          <span class="chip">scikit-learn</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">MLflow</span>
+          <span class="chip">DVC</span>
           <span class="chip">Docker</span>
           <span class="chip">Kubernetes</span>
           <span class="chip">Apache Kafka</span>
+          <span class="chip">Apache Spark</span>
+          <span class="chip">Airflow</span>
+          <span class="chip">dbt</span>
+          <span class="chip">Databricks</span>
+          <span class="chip">Snowflake</span>
+          <span class="chip">BigQuery</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Azure</span>
+          <span class="chip">Google Cloud</span>
           <span class="chip">React.js</span>
           <span class="chip">Angular</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
           <span class="chip">Git</span>
           <span class="chip">Postman</span>
           <span class="chip">Jenkins</span>
@@ -1171,6 +1776,11 @@
           <span class="chip">Web Applications</span>
           <span class="chip">Distributed Systems</span>
           <span class="chip">Event-Driven Systems</span>
+          <span class="chip">LLMs</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">RAG</span>
+          <span class="chip">Vector Databases</span>
+          <span class="chip">AI Agents</span>
           <span class="chip">Copilot</span>
           <span class="chip">ChatGPT</span>
           <span class="chip">Gemini</span>
@@ -1197,8 +1807,9 @@
           <h2>Experience Timeline</h2>
         </div>
         <p>
-          A backend-focused journey centered on scalable Java services, microservice migration, API engineering, performance optimization,
-          and secure delivery in Agile teams.
+          A product engineering journey across Java, full stack delivery, APIs, microservices, cloud-ready platforms,
+          security remediation,
+          AI-assisted optimization, and data-aware system design.
         </p>
       </div>
 
@@ -1206,25 +1817,36 @@
         <article class="timeline-card reveal reveal-right">
           <div class="role-head">
             <div>
-              <h3>Lead Software Developer</h3>
-              <div class="role-meta">Encora Inc · Pune, India</div>
+              <h3>Full Stack Developer / Lead Software Developer</h3>
+              <div class="role-meta">Encora Inc - Pune, India</div>
             </div>
             <div class="role-time">July 2021 - June 2025</div>
           </div>
           <div class="highlights">
+            <span class="badge">Full stack delivery</span>
             <span class="badge">200+ REST APIs</span>
             <span class="badge">3+ modules split to microservices</span>
             <span class="badge">30-40% faster performance</span>
+            <span class="badge">AI-assisted API optimization</span>
+            <span class="badge">Cloud-ready microservices</span>
             <span class="badge">150+ vulnerabilities addressed</span>
             <span class="badge">25% fewer production defects</span>
           </div>
           <ul class="timeline-list">
-            <li>Designed and maintained scalable Java backend architectures with Spring Boot for microservices-based web applications.</li>
-            <li>Developed and integrated 200+ RESTful API endpoints for efficient communication between distributed services.</li>
-            <li>Modernized legacy monolithic systems by decoupling 3+ business-critical modules into independent microservices.</li>
-            <li>Optimized SQL queries to strengthen backend reliability and data processing efficiency.</li>
-            <li>Led migration of a monolithic Angular application with 5-6 modules and 4K+ LOC to React.js.</li>
-            <li>Worked closely with developers, QA, and business stakeholders while independently owning user stories in Agile teams.</li>
+            <li>Designed and maintained scalable Java and Spring Boot services for enterprise web applications, REST
+              integrations, and distributed business workflows.</li>
+            <li>Developed and integrated 200+ RESTful API endpoints, improving communication between services and
+              supporting high-volume application features.</li>
+            <li>Modernized legacy monolithic systems by decoupling 3+ business-critical modules into independent
+              microservices with cleaner service boundaries.</li>
+            <li>Optimized SQL queries, API behavior, and backend performance using profiling, testing, and AI-assisted
+              analysis to improve reliability and response time.</li>
+            <li>Built AI-ready microservice patterns and automation-friendly service interfaces that can support future
+              cloud, data, and intelligent workflow integrations.</li>
+            <li>Led migration of a monolithic Angular application with 5-6 modules and 4K+ LOC to React.js, improving
+              frontend modularity and maintainability.</li>
+            <li>Resolved production defects, addressed 150+ security vulnerabilities, and collaborated with developers,
+              QA, and business stakeholders in Agile teams.</li>
           </ul>
         </article>
       </div>
@@ -1237,17 +1859,39 @@
           <h2>Projects</h2>
         </div>
         <p>
-          Academic and applied projects from the resume that combine software engineering, data workflows, and scalable backend thinking.
+          Projects are framed so recruiters can quickly identify backend, full stack, data engineering, AI engineering,
+          MLOps, and data science alignment.
         </p>
       </div>
 
       <div class="project-grid">
         <article class="project-card reveal reveal-left">
-          <div class="project-emoji">🫁</div>
+          <div class="project-emoji" aria-hidden="true">&#128197;</div>
+          <h3>Timesheet Tracking System</h3>
+          <p>
+            Ongoing full stack platform for tracking working hours, approvals, project allocation, reporting, and
+            productivity signals.
+            Designed as a recruiter-friendly showcase for role-based dashboards, REST APIs, authentication, data
+            modeling, and analytics-ready reporting.
+          </p>
+          <div class="tags">
+            <span class="badge">Spring Boot</span>
+            <span class="badge">React</span>
+            <span class="badge">REST APIs</span>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">Role-based Access</span>
+            <span class="badge">Analytics</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-emoji" aria-hidden="true">&#129729;</div>
           <h3>Covid Prediction Using Image Processing</h3>
           <p>
-            Built an end-to-end CT scan analysis pipeline using K-Means clustering, RNN-based classification, and basic streaming concepts.
-            The solution emphasized modular design, containerized deployment, and improved reliability.
+            Built an end-to-end CT scan analysis pipeline using K-Means clustering, RNN classification, and streaming
+            concepts.
+            The solution emphasized image processing, ML workflow design, containerized deployment, and reduced false
+            positives and negatives.
           </p>
           <div class="tags">
             <span class="badge">K-Means</span>
@@ -1259,28 +1903,70 @@
           </div>
         </article>
 
-        <article class="project-card reveal">
-          <div class="project-emoji">🩸</div>
-          <h3>Blood Bank Management System</h3>
+        <article class="project-card reveal reveal-right">
+          <div class="project-emoji" aria-hidden="true">&#129302;</div>
+          <h3>AI Agent for MLOps Knowledge Workflows</h3>
           <p>
-            Developed a web-based platform for donor, patient, and blood inventory tracking with strong data consistency and efficient backend operations.
-            The system used structured SQL queries and REST-style interfaces for smooth data flow.
+            Designed an AI agent concept for ML engineering teams that can summarize experiment results, retrieve model
+            documentation,
+            recommend deployment checks, and support MLOps workflows through retrieval, prompt engineering, and
+            tool-based automation.
           </p>
           <div class="tags">
-            <span class="badge">Web Application</span>
-            <span class="badge">SQL</span>
-            <span class="badge">Database Design</span>
-            <span class="badge">REST Interfaces</span>
-            <span class="badge">Backend Development</span>
+            <span class="badge">LLMs</span>
+            <span class="badge">RAG</span>
+            <span class="badge">LangChain</span>
+            <span class="badge">Vector Search</span>
+            <span class="badge">MLflow</span>
+            <span class="badge">Model Monitoring</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-left">
+          <div class="project-emoji" aria-hidden="true">&#128246;</div>
+          <h3>Predictive Anomaly Detection</h3>
+          <p>
+            Developed an end-to-end Python pipeline for damage detection in composite materials, focusing on
+            signal-based data ingestion,
+            organization, and Digital Signal Processing feature extraction from raw sensor data to identify hidden
+            defects in fiber-metal laminates.
+          </p>
+          <div class="tags">
+            <span class="badge">Python</span>
+            <span class="badge">DSP</span>
+            <span class="badge">Signal Processing</span>
+            <span class="badge">Feature Extraction</span>
+            <span class="badge">Anomaly Detection</span>
+            <span class="badge">Research</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-emoji" aria-hidden="true">&#128202;</div>
+          <h3>Lakehouse Analytics & Big Data Platform</h3>
+          <p>
+            Portfolio-grade data engineering project covering ingestion, streaming, transformation, orchestration,
+            warehousing, data quality,
+            BI-ready marts, and ML feature preparation across batch and real-time datasets.
+          </p>
+          <div class="tags">
+            <span class="badge">Spark</span>
+            <span class="badge">Kafka</span>
+            <span class="badge">Airflow</span>
+            <span class="badge">dbt</span>
+            <span class="badge">Data Lake</span>
+            <span class="badge">Warehouse</span>
+            <span class="badge">Data Quality</span>
           </div>
         </article>
 
         <article class="project-card reveal reveal-right">
-          <div class="project-emoji">⚙️</div>
+          <div class="project-emoji" aria-hidden="true">&#9881;</div>
           <h3>Legacy Modernization & API Platform</h3>
           <p>
-            At Encora, contributed to modernizing monolithic systems into microservices, delivered a high-volume API layer,
-            improved performance by 30-40%, and strengthened production quality and security across business-critical modules.
+            Modernized monolithic systems into microservices, delivered a high-volume API layer, improved performance by
+            30-40%,
+            strengthened security, and supported Angular-to-React migration across business-critical modules.
           </p>
           <div class="tags">
             <span class="badge">Spring Boot</span>
@@ -1288,6 +1974,7 @@
             <span class="badge">REST APIs</span>
             <span class="badge">SQL Optimization</span>
             <span class="badge">React Migration</span>
+            <span class="badge">Security</span>
           </div>
         </article>
       </div>
@@ -1300,7 +1987,8 @@
           <h2>Education & Languages</h2>
         </div>
         <p>
-          Current academic focus in web and data science, backed by an information technology engineering degree and multilingual communication skills.
+          Coursework is grouped by recruiter-friendly themes so the academic foundation is easy to map to software,
+          data, cloud, AI, and architecture roles.
         </p>
       </div>
 
@@ -1311,28 +1999,146 @@
               <h3>M.Sc. in Web and Data Science</h3>
               <p>Universitat Koblenz</p>
               <small>October 2025 - Ongoing</small>
-              <p>Focus areas: Web Science, Data Science, Machine Learning and Data Mining, and Engineering Web and Data-Intensive Systems.</p>
+              <div class="course-groups">
+                <div class="course-group">
+                  <strong>Data & AI</strong>
+                  <div class="course-cloud">
+                    <span class="course-chip">Data Science</span>
+                    <span class="course-chip">Big Data</span>
+                    <span class="course-chip">Machine Learning and Data Mining</span>
+                    <span class="course-chip">Artificial Intelligence</span>
+                  </div>
+                </div>
+                <div class="course-group">
+                  <strong>Web & Systems</strong>
+                  <div class="course-cloud">
+                    <span class="course-chip">Jakarta EE</span>
+                    <span class="course-chip">Web Science</span>
+                    <span class="course-chip">Engineering Web and Data-Intensive Systems</span>
+                    <span class="course-chip">Network Theory and Dynamic Systems</span>
+                  </div>
+                </div>
+                <div class="course-group">
+                  <strong>Architecture & Management</strong>
+                  <div class="course-cloud">
+                    <span class="course-chip">Enterprise Architecture</span>
+                    <span class="course-chip">IT Management</span>
+                    <span class="course-chip">Entrepreneurial Strategies</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="edu-item">
-              <h3>B.E. in Information Technology</h3>
-              <p>Savitribai Phule Pune University</p>
-              <small>August 2017 - July 2021</small>
-              <p>Engineering foundation in information technology, software systems, and applied computing.</p>
-            </div>
-            <div class="edu-item">
-              <h3>Certifications</h3>
-              <p>Microsoft Java 98-388 and AZ-900: Azure Fundamentals</p>
+              <h3 style="font-size:1.6rem; margin-bottom:12px;">Languages</h3>
+              <p>Language proficiency from the resume, shown as animated badges for quick scanning.</p>
+              <div class="lang-badges">
+                <div class="lang-badge"><strong>English</strong><span>C1</span></div>
+                <div class="lang-badge"><strong>German</strong><span>A2</span></div>
+              </div>
+
             </div>
           </div>
         </article>
 
         <article class="lang-card glass-card reveal reveal-right">
-          <h3 style="font-size:1.6rem; margin-bottom:12px;">Languages</h3>
-          <p>Language proficiency from the resume, shown as animated badges for quick scanning.</p>
-          <div class="lang-badges">
-            <div class="lang-badge"><strong>English</strong><span>C1</span></div>
-            <div class="lang-badge"><strong>German</strong><span>A1</span></div>
+          <h3>B.E. in Information Technology</h3>
+          <p>Savitribai Phule Pune University</p>
+          <small>August 2017 - July 2021</small>
+          <div class="course-groups">
+            <div class="course-group">
+              <strong>Software Engineering</strong>
+              <div class="course-cloud">
+                <span class="course-chip">Data Structures and Files</span>
+                <span class="course-chip">Design and Analysis of Algorithms</span>
+                <span class="course-chip">Software Engineering and Project Management</span>
+                <span class="course-chip">Software Design and Modeling</span>
+                <span class="course-chip">Software Testing and Quality Analysis</span>
+              </div>
+            </div>
+            <div class="course-group">
+              <strong>Data & Analytics</strong>
+              <div class="course-cloud">
+                <span class="course-chip">Database Management Systems</span>
+                <span class="course-chip">Machine Learning and Applications</span>
+                <span class="course-chip">Data Science and Big Data Analytics</span>
+                <span class="course-chip">Business Analytics and Intelligence</span>
+                <span class="course-chip">Engineering Mathematics</span>
+              </div>
+            </div>
+            <div class="course-group">
+              <strong>Cloud & Distributed Systems</strong>
+              <div class="course-cloud">
+                <span class="course-chip">Cloud Computing</span>
+                <span class="course-chip">Distributed Computing System</span>
+                <span class="course-chip">Internet of Things</span>
+                <span class="course-chip">Cyber Security</span>
+              </div>
+            </div>
+            <div class="course-group">
+              <strong>Core Systems</strong>
+              <div class="course-cloud">
+                <span class="course-chip">Operating Systems</span>
+                <span class="course-chip">Systems Programming</span>
+                <span class="course-chip">Computer Network Technology</span>
+              </div>
+            </div>
           </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-kicker">Proof Points</span>
+          <h2>Certifications</h2>
+        </div>
+        <p>
+          Certifications are grouped as quick credibility signals across Java programming, cloud foundations, AI
+          prompting, frontend basics, and React.
+        </p>
+      </div>
+
+      <div class="cert-grid">
+        <article class="cert-card reveal reveal-left">
+          <span class="cert-issuer">Microsoft</span>
+          <h3>Java 98-388: Java Programming</h3>
+          <p>Validates Java programming fundamentals, object-oriented concepts, and application development foundations.
+          </p>
+        </article>
+        <article class="cert-card reveal">
+          <span class="cert-issuer">Microsoft</span>
+          <h3>AZ-900: Azure Fundamentals</h3>
+          <p>Cloud fundamentals covering Azure services, governance, pricing, security, and platform concepts.</p>
+        </article>
+        <article class="cert-card reveal reveal-right">
+          <span class="cert-issuer">AWS</span>
+          <h3>AWS Fundamentals: Going Cloud-Native</h3>
+          <p>Cloud-native foundations across AWS services, scalable application thinking, and cloud architecture basics.
+          </p>
+        </article>
+        <article class="cert-card reveal reveal-left">
+          <span class="cert-issuer">Google Cloud</span>
+          <h3>Google Cloud Fundamentals for Azure Professionals: Core Infrastructure</h3>
+          <p>Cross-cloud infrastructure fundamentals for compute, storage, networking, and service mapping.</p>
+        </article>
+        <article class="cert-card reveal">
+          <span class="cert-issuer">DeepLearning.AI</span>
+          <h3>ChatGPT Prompt Engineering for Developers</h3>
+          <p>Applied prompt design, AI-assisted development workflows, and structured interaction with language models.
+          </p>
+        </article>
+        <article class="cert-card reveal reveal-right">
+          <span class="cert-issuer">Duke University</span>
+          <h3>Programming Foundations with JavaScript, HTML and CSS</h3>
+          <p>Frontend fundamentals for web development, browser-based programming, and responsive interface building.
+          </p>
+        </article>
+        <article class="cert-card reveal reveal-left">
+          <span class="cert-issuer">HackerRank</span>
+          <h3>React</h3>
+          <p>React fundamentals for component-driven UI development, stateful interfaces, and modern frontend delivery.
+          </p>
         </article>
       </div>
     </section>
@@ -1344,7 +2150,9 @@
           <h2>Contact</h2>
         </div>
         <p>
-          Open to working student and internship opportunities in backend engineering, web systems, and data-intensive software environments.
+          Open to working student, internship, and full-time roles across software engineering, full stack development,
+          data engineering,
+          AI engineering, MLOps, and cloud-oriented product teams.
         </p>
       </div>
 
@@ -1360,15 +2168,20 @@
           </div>
           <div class="contact-card">
             <small>Location</small>
-            <strong>Trierer Straße 70, 56072 Koblenz</strong>
+            <strong>Trierer Strasse 70, 56072 Koblenz, Germany</strong>
           </div>
           <div class="contact-card">
             <small>Availability</small>
-            <strong>Working Student / Intern</strong>
+            <strong>Working Student / Intern / Full-time Job Roles</strong>
           </div>
           <div class="contact-card">
-            <small>Profiles</small>
-            <strong>LinkedIn: linkedinpranavpanhale/ · GitHub: ypranav</strong>
+            <small>LinkedIn</small>
+            <a href="https://www.linkedin.com/in/pranavpanhale/" target="_blank"
+              rel="noreferrer">linkedin.com/in/pranavpanhale</a>
+          </div>
+          <div class="contact-card">
+            <small>GitHub</small>
+            <a href="https://github.com/pranavsureshpanhale" target="_blank" rel="noreferrer">github.com/pranavsureshpanhale</a>
           </div>
         </div>
 
@@ -1384,7 +2197,7 @@
     </section>
   </main>
 
-  <p class="footer-note">Built as a single-file animated portfolio using details extracted from the resume.</p>
+  <p class="footer-note">Thanks for visiting — let's build something amazing together.</p>
 
   <script>
     const loader = document.getElementById("loader");
@@ -1433,15 +2246,50 @@
 
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
+    const skillTabs = document.querySelectorAll(".skill-tab");
+    const skillPanels = document.querySelectorAll(".skills-panel");
+
+    function animateSkillPanel(panel) {
+      panel.querySelectorAll(".skill-fill").forEach((bar, index) => {
+        if (bar.classList.contains("animated")) return;
+        setTimeout(() => {
+          bar.style.width = bar.dataset.width;
+          bar.classList.add("animated");
+        }, index * 80);
+      });
+    }
+
+    function isPanelVisible(panel) {
+      const rect = panel.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.82 && rect.bottom > 0;
+    }
+
+    skillTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const selected = tab.dataset.skillTab;
+
+        skillTabs.forEach((item) => {
+          const active = item === tab;
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-selected", String(active));
+        });
+
+        skillPanels.forEach((panel) => {
+          const active = panel.dataset.skillPanel === selected;
+          panel.classList.toggle("active", active);
+          panel.setAttribute("aria-hidden", String(!active));
+          if (active && isPanelVisible(panel)) {
+            panel.classList.add("visible");
+            animateSkillPanel(panel);
+          }
+        });
+      });
+    });
+
     const skillObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.querySelectorAll(".skill-fill").forEach((bar, index) => {
-          setTimeout(() => {
-            bar.style.width = bar.dataset.width;
-            bar.classList.add("animated");
-          }, index * 80);
-        });
+        animateSkillPanel(entry.target);
         skillObserver.unobserve(entry.target);
       });
     }, { threshold: 0.35 });
@@ -1539,4 +2387,5 @@
     drawParticles();
   </script>
 </body>
+
 </html>
